@@ -1,0 +1,10 @@
+INSERT INTO Blocs (modul) VALUES  ('menu'), ('pobles'), ('ciutats'), ('mapes'), ('admin_menu');
+INSERT INTO Llocs (modul, nom) VALUES ('casa', 'index'), ('temps', 'eltemps'), ('admin', 'admin'), ('admin_af', 'afegir'), ('admin_ed', 'editar'), ('admin_he', 'herencia');
+UPDATE Llocs SET llocpare = 3 WHERE modul = 'admin_af';
+UPDATE Llocs SET llocpare = 3 WHERE modul = 'admin_ed';
+UPDATE Llocs SET llocpare = 3 WHERE modul = 'admin_he';
+INSERT INTO Menu (idmenu, nommenu, pesmenu) VALUES (1, 'Rosquilletes', 0), (2, 'El Temps', 10), (3, 'Administració', 5);
+INSERT INTO ModulsCap (Llocs_idllocs, Blocs_idblocs) VALUES (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1);
+INSERT INTO ModulsDreta (Llocs_idllocs, Blocs_idblocs) VALUES (1, 2), (1, 3);
+INSERT INTO ModulsPeu (Llocs_idllocs, Blocs_idblocs) VALUES (1, 4);
+INSERT INTO Configuracio VALUES ('rosquilletes-CMS', 1);

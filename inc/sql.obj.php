@@ -1,0 +1,62 @@
+<?php
+// 21-06-2013
+// alex
+
+class BaseDades {
+  static private $us;
+  static private $co;
+  static private $ho;
+  static private $bd;
+  static private $con;
+
+  private function __construct() {}
+
+  static public function agafarBD() {
+    self::$us = Registre::lleg("bd_us");
+    self::$co = Registre::lleg("bd_co");
+    self::$ho = Registre::lleg("bd_ho");
+    self::$bd = Registre::lleg("bd_bd");
+    self::$con = @mysqli_connect(self::$ho, self::$us, self::$co, self::$bd) or die("Error 0001.");
+  }
+  static public function consVector($sql) {
+    $vec = array();
+    $cons = @mysqli_query(self::$con, $sql);
+    $aux = array();
+    while ($aux = (@mysqli_fetch_array($cons, MYSQLI_ASSOC))) {
+      foreach ($aux as $ind => $val)
+	$aux[$ind] = utf8_encode($val);
+      array_push($vec, array_values($aux));
+    }
+    @mysqli_free_result($cons);
+    return $vec;
+  }
+  static public function consValor($sql) {
+    $vec = array();
+    $cons = @mysqli_query(self::$con, $sql);
+    $vec = @mysqli_fetch_array($cons, MYSQLI_ASSOC);
+    if (count($vec) != 0) {
+      $vec = array_values($vec);
+      @mysqli_free_result($cons);		       
+      return utf8_encode($vec[0]);
+    }
+    @mysqli_free_result($cons);
+    return "";
+  }
+  static public function consFiles($sql) {
+    $val = 0;
+    $cons = @mysqli_query(self::$con, $sql);
+    $val = @mysqli_num_rows($cons);
+    @mysqli_free_result($cons);
+    return $val;
+  }
+  static public function consulta($sql) {
+    $return = false;
+    if ($cons = @mysqli_query(self::$con, $sql))
+      $return = true;
+    @mysqli_free_result($cons);
+    return $return;
+  }
+  static public function tancarBD() {
+    @mysqli_close(self::$con);
+  }
+}

@@ -1,0 +1,52 @@
+<!-- INI head -->
+<!-- INI css -->
+<link href="{CSS}" type="text/css" rel="stylesheet">
+<!-- FIN css -->
+<!-- INI js -->
+<script src="{JS}" type="text/javascript"></script>
+<!-- FIN js -->
+<meta name="robots" content="noindex, nofollow" />
+<title>Afegir móduls | {NOMWEB}</title>
+<!-- FIN head -->
+<!-- INI blocs_co -->
+<article>
+  <!-- INI blocs_af -->
+  <p class="correcte">Bloc "{BLOC}" afegit correctament.</p>
+  <!-- FIN blocs_af -->  
+</article>
+<!-- FIN blocs_co -->
+<!-- INI blocs_er -->
+<article>
+  <p class="error">Hi ha hagut un error a l'afegir algún dels mòduls Blocs.</p>
+</article>
+<!-- FIN blocs_er -->
+<!-- INI llocs -->
+S'han detectat nous Llocs per a afegir:<br><br>
+<form enctype="multipart/form-data" method="post" action="{ACTION}" >
+  <table>
+    <tr>
+      <td>Arxiu</td><td>Nom del mòdul</td>
+    </tr>
+    <!-- INI llocs_ll -->
+    <tr>
+      <td>{LLOC}.php</td><td><input class="text" type="text" name="{LLOC}"></td>
+    </tr>
+    <!-- FIN llocs_ll -->
+    <tr>
+      <td></td><td><input class="submit" type="submit" name="bot_afll" value="Afegir"></td>
+    </tr>
+  </table>
+</form>
+<!-- FIN llocs -->
+<!-- INI llocs_co -->
+<article>
+  <!-- INI llocs_af -->
+  <p class="correcte">Lloc "{LLOC}" afegit correctament.</p>
+  <!-- FIN llocs_af -->  
+</article>
+<!-- FIN llocs_co -->
+<!-- INI llocs_er -->
+<article>
+  <p class="error">Hi ha hagut un error a l'afegir algún dels mòduls Llocs.</p>
+</article>
+<!-- FIN llocs_er -->
