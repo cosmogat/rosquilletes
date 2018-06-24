@@ -16,7 +16,7 @@ Change USER and PASS by your own user and password of MySQL server.
 
 ## References
 * [jquery](https://github.com/jquery/jquery) - jQuery JavaScript Library.
-
+* [openclipart](https://github.com/jquery/jquery) - Open Clipart.
 ## Autors
 * **Cosmo Cat**  [cosmogat](https://github.com/cosmogat)
 ## License
