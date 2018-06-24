@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)\/([A-Za-z0-9]{2,45})/$ rosquilletes/index.php?lloc=$2 [L,QSA]
+RewriteRule ^([A-Za-z0-9]{2,45})/$ rosquilletes/index.php?lloc=$1 [L,QSA]
+RewriteRule ^(.*)\/([A-Za-z0-9]{2,45})/([A-Za-z0-9]{2,45}).html$ rosquilletes/index.php?lloc=$2&opt=$3 [L,QSA]
+RewriteRule ^([A-Za-z0-9]{2,45})/([A-Za-z0-9]{2,45}).html$ rosquilletes/index.php?lloc=$1&opt=$2 [L,QSA]
+</IfModule>
