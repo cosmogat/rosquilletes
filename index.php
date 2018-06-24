@@ -1,7 +1,7 @@
 <?php
 // 21-06-2013
 // billy
-// mirar en el CMS de eltiempo24:
+// mirar en el CMS de ...:
 //   es destruiexen els objectes que siguen moduls ?.
 //   coses comunes als moduls ficades en una classe principal.
 
